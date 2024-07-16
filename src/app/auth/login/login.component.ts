@@ -33,9 +33,9 @@ export class LoginComponent {
         });
         console.log(user,'epa')
         if(user){
-          alert('you are into');
           this.login.reset();
-          this._router.navigate(['dashboard']);
+          this._router.navigateByUrl('/home')
+
         }else{
           alert('error');
           this._router.navigate(['login']);

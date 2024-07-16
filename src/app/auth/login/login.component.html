@@ -1,21 +1,31 @@
-<div class="container">
-    
-    <form [formGroup]="login" (ngSubmit)="loginData(login)" class="form_box">
-        <h3>Iniciar Session</h3>
-        <div class="form-group">
-            <label for="">Usuario</label>
-            <input type="text" formControlName="user" class="form-control mb-3mt-3" placeholder="Ingresa tu nombre">
+<section>
+    <div class="contenedor">
+        <div class="formulario">
+            <form [formGroup]="login" (ngSubmit)="loginData(login)" class="form_box">
+                <h2>ALERTA TOTAL</h2>
+                <div class="input-contenedor">
+                  
+                    <input type="email" formControlName="user" required="">
+                    <label for="">Correo</label>
+                </div>
+        
+                <div class="input-contenedor">
+                  
+                    <input type="password" formControlName="password"   required="">
+                    <label for="">Contraseña</label>
+                </div>
+
+                <div class="olvidar">
+                    <label for="">
+                        <input type="checkbox" > Recordar
+                        <a href="#">Olvidé la contraseña</a>
+                    </label>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success">Iniciar</button>
+                </div>
+        
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="">Contraseña</label>
-            <input type="password" formControlName="password" class="form-control mb-3mt-3" placeholder="Ingresa tu contraseña">
-        </div>
-
-        <button type="submit" class="btn btn-success">Iniciar</button>
-
-    </form>
-
-</div>
-
-<router-outlet></router-outlet>
+    </div>
+</section>
