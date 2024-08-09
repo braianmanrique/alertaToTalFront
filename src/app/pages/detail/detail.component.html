@@ -1,0 +1,90 @@
+<div class="container" style="width: 1000rem; height: 50rem; margin: auto; border: 1px solid gray; margin-top: 5rem;">
+    <h2>Ticket  # 1  - Prioridad <span style="color: red;">ALTA</span></h2>
+
+    <div style="display: flex;"> 
+        <div style="width: 15rem; height: 10rem;  ">
+
+            <img ngSrc="assets/robo.png" width="240" height="160" priority>
+
+        </div>
+        
+
+        <div style="width: 15rem; height: 10rem; margin-left: 2rem; background-color: blueviolet; ">
+            <img ngSrc="assets/mapa.png" width="240" height="160" priority>
+
+        </div>
+        <span style="margin-left:2rem">
+            Fecha: 12/10/2024 
+            Hora : 8:00 pm
+        </span>
+        <span style="margin-left:2rem">
+            <p>
+                Nombre ciudadano: Braian Manrique Garay         
+
+            </p>
+            <p> Documento: 112229192  </p> 
+            <p> Correo : braian_manrique@hotmail.com</p>
+        </span>
+    </div>
+    
+    <hr>
+    <div style="display: flex;">
+        <h2>Estado de la Alerta</h2>
+        <div style="display: flex; margin-top: 3rem;" >
+           
+
+         
+            <div class="timeline">
+                <div class="timeline-item" *ngFor="let event of timelineEvents">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <h4>{{ event.date | date: 'medium' }}</h4>
+                    <p>{{ event.description }}</p>
+                  </div>
+                </div>
+              </div>
+            
+              <hr>
+
+              <div class="timeline2">
+                <div *ngFor="let item of events" class="timeline-event">
+                    <div class="timeline-point-track-container">
+                            <div class="timeline-point" [ngClass]="item?.status === 'F' ? 'heighlight' : ''" ></div>
+
+                            <div class="timeline-track"  [ngClass]="item?.status === 'F' ? 'heighlight' : ''"></div>
+                    </div>
+
+                    <div class="timeline-content2">
+                        <span>
+                            {{item.content}}
+                        </span>
+                        <span>
+                            {{item.dateEvent}}
+                        </span>
+                    </div>
+
+                </div>
+                <div>
+                    <mat-card>
+                      
+                        <div mat-card-image></div>
+                        <mat-card-content>
+                          <p>
+                         Para esta alerta se realizo....
+                          </p>
+                        </mat-card-content>
+                     
+                      </mat-card>
+                </div>
+
+              </div>
+        </div>
+      
+          <div style="margin-left: 5rem;">
+            <h3>Entidad</h3>
+
+            <p style="font-weight: bold;">Policia Nacional</p>
+          </div>
+          
+    </div>
+</div>

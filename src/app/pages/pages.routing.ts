@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
      children:[ 
      { path: '',redirectTo: 'dashboard', pathMatch: 'full'},
      { path: 'dashboard', component: DashboardComponent },
+     {path: 'detalle/:id', component: DetailComponent}
     
     ]
   },

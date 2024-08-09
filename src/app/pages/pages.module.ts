@@ -5,20 +5,24 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { MaterialModule } from '../material/material.module';
+import { DetailComponent } from './detail/detail.component';
 
+import { NgOptimizedImage } from '@angular/common'
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    MainpageComponent
+    MainpageComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     AppRoutingModule,
     MaterialModule,
-    MaterialModule
+    MaterialModule,
+    NgOptimizedImage
   ],
   exports: [
     DashboardComponent,

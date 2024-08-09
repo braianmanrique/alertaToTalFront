@@ -12,6 +12,7 @@ import { MatIconButton } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -30,7 +31,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSortModule,
     MatIconModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
+    
+    
   ],
   exports: [
     MatSidenavModule,
@@ -45,7 +49,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconButton,
     MatIconModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }
