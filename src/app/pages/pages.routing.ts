@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { DetailComponent } from './detail/detail.component';
+import { ReportsComponent } from './reports/reports.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,10 @@ const routes: Routes = [
      children:[ 
      { path: '',redirectTo: 'dashboard', pathMatch: 'full'},
      { path: 'dashboard', component: DashboardComponent },
+     { path: 'reports', component: ReportsComponent },
+     { path: 'settings', component: SettingsComponent },
+
+
      {path: 'detalle/:id', component: DetailComponent}
     
     ]

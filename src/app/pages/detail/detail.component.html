@@ -1,4 +1,13 @@
-<div class="container" style="width: 1000rem; height: 50rem; margin: auto; border: 1px solid gray; margin-top: 5rem;">
+
+  <div class="container">
+   
+      <button mat-flat-button  [routerLink]="'/home/dashboard'" >
+        <mat-icon>arrow_back</mat-icon>
+        Regresar</button>
+
+  </div>
+
+  <div class="container" style="width: 1000rem; height: 100vh; margin: auto; border: 1px solid gray; margin-top: 5rem;">
     <h2>Ticket  # 1  - Prioridad <span style="color: red;">ALTA</span></h2>
 
     <div style="display: flex;"> 
@@ -34,7 +43,7 @@
            
 
          
-            <div class="timeline">
+            <!-- <div class="timeline">
                 <div class="timeline-item" *ngFor="let event of timelineEvents">
                   <div class="timeline-dot"></div>
                   <div class="timeline-content">
@@ -42,7 +51,7 @@
                     <p>{{ event.description }}</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             
               <hr>
 
@@ -53,25 +62,27 @@
 
                             <div class="timeline-track"  [ngClass]="item?.status === 'F' ? 'heighlight' : ''"></div>
                     </div>
-
+                    
                     <div class="timeline-content2">
-                        <span>
-                            {{item.content}}
-                        </span>
-                        <span>
-                            {{item.dateEvent}}
-                        </span>
+                        <h4>
+                            {{item.content}} -   {{item.dateEvent}}
+                        </h4>
+                        <p>{{item.comments}}</p>
                     </div>
 
                 </div>
-                <div>
+
+                <div style="margin-top: 5rem;">
                     <mat-card>
                       
-                        <div mat-card-image></div>
                         <mat-card-content>
-                          <p>
-                         Para esta alerta se realizo....
-                          </p>
+                            <div style="display: flex;">
+                                <p>
+                                  Se evito con exito el hurto....
+                                </p>
+                                 <mat-icon>done</mat-icon> 
+                            </div>
+                       
                         </mat-card-content>
                      
                       </mat-card>
@@ -84,6 +95,10 @@
             <h3>Entidad</h3>
 
             <p style="font-weight: bold;">Policia Nacional</p>
+
+            <h3>Estado</h3>
+            <p style="font-weight: bold;">Cerrado</p>
+
           </div>
           
     </div>

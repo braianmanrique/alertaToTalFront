@@ -26,22 +26,15 @@ const NAMES: string[] = [
   'Braian',
   'Giovanny',
   'Fabian',
-  'Andrea',
-  'Alisson',
-  'Andrea',
-  'Isla',
-  'Mia',
+  'Pepito',
+  'Ruben'
 ];
 
 const EMAILS: string[] = [
   'braian_manrique@hotmail.com',
   'Giovanny@hotmail.com',
   'Fabian@hotmail.com',
-  'Andrea@hotmail.com',
-  'Alisson@hotmail.com',
-  'Andrea@hotmail.com',
-  'Isla@hotmail.com',
-  'Mia@hotmail.com',
+  
 ];
 
 const ENTITIES: string[] = [

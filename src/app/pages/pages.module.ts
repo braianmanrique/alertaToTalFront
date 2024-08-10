@@ -7,14 +7,18 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { DetailComponent } from './detail/detail.component';
 
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import { ReportsComponent } from './reports/reports.component';
+import { SettingsComponent } from './settings/settings.component'
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     MainpageComponent,
-    DetailComponent
+    DetailComponent,
+    ReportsComponent,
+    SettingsComponent
   ],
   imports: [
     CommonModule,
