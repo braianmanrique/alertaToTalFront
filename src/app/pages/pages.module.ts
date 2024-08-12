@@ -10,9 +10,18 @@ import { DetailComponent } from './detail/detail.component';
 import { NgOptimizedImage } from '@angular/common';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../interceptors/auth.service';
 
 
 @NgModule({
+  // providers:[
+  //   {
+  //     provide : HTTP_INTERCEPTORS,
+  //     useClass: AuthInterceptor,
+  //     multi: true
+  //   }
+  // ],
   declarations: [
     DashboardComponent,
     MainpageComponent,

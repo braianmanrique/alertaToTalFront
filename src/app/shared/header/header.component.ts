@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
-  constructor(private router : Router){
-
+  public name = '';
+  constructor(private router : Router, private authService: AuthService){
+    this.name = authService.user.name;
   }
   logout(){
     localStorage.removeItem('token');

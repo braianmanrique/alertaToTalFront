@@ -11,7 +11,6 @@ export interface UserData {
   name: string;
   email: string;
   progress: string;
-  fruit: string;
   tags: string;
   state: string;
   entiti: string;
@@ -51,22 +50,31 @@ const ENTITIES: string[] = [
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  displayedColumns: string[] = ['id', 'name', 'email', 'progress', 'fecha','fruit', 'reporte', 'tags', 'entiti','estado', 'detalle'];
-  dataSource: MatTableDataSource<any> ;
+  displayedColumns: string[] = ['id', 'name', 'email', 'progress', 'fecha', 'reporte', 'tags', 'entiti','estado', 'detalle'];
+  // dataSource: MatTableDataSource<any> ;
+  dataSource = new MatTableDataSource<any>([]);
+
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator ;
   @ViewChild(MatSort) sort!: MatSort ;
   
   constructor(private router : Router, private alertsService: ReportsService){
-    const users = Array.from({length: 10}, (_, k) => createNewUser(k + 1));
+    // const users = Array.from({length: 10}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    // this.dataSource = new MatTableDataSource(users);
   }
 
   ngOnInit():void{
-   this.alertsService.loadAlerts().subscribe(resp=> {
+   this.alertsService.loadAlerts().subscribe(
+    (data: any) => {
+      console.log(data,'epp')
+      this.dataSource.data = data.alerts;  // Aquí se pasa la data al dataSource
+
+    // this.dataSource = new MatTableDataSource(resp);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
    },(err) =>{
     console.log(err.error)
@@ -121,7 +129,6 @@ function createNewUser(id: number): UserData {
     email: email,
     progress: Math.round(Math.random() * 10).toString(),
     state: 'Activo',
-    fruit: STATE[Math.round(Math.random() * (STATE.length - 1))],
     tags: 'Tags',
     entiti : entities
   };

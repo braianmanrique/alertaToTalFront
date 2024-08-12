@@ -14,7 +14,7 @@ export class LoginComponent {
 
   // admi@gmail.com
   public login: FormGroup | any = this.fb.group({
-    email: [ localStorage.getItem('email') || '', [Validators.required, Validators.email]],
+    email: [ localStorage.getItem('email') || 'admi@gmail.com', [Validators.required, Validators.email]],
     password: ['admin#*.tp', Validators.required],
     remember: [false]
   });

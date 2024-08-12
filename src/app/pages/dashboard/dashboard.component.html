@@ -19,7 +19,12 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ID ticket </th>
             <td mat-cell *matCellDef="let row"> {{row.id}} </td>
           </ng-container>
-      
+        
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero de documento </th>
+            <td mat-cell *matCellDef="let row"> {{row.document}} </td>
+          </ng-container>
+
           <!-- Progress Column -->
           <ng-container matColumnDef="progress">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre ciudadano </th>
@@ -32,14 +37,11 @@
           </ng-container>
       
           <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero de documento </th>
-            <td mat-cell *matCellDef="let row"> {{row.identification}} </td>
-          </ng-container>
+      
 
           <ng-container matColumnDef="reporte">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de reporte </th>
-            <td mat-cell *matCellDef="let row"> Malla Vial </td>
+            <td mat-cell *matCellDef="let row"> {{row.type}} </td>
           </ng-container>
       
 
@@ -49,11 +51,6 @@
             <td mat-cell *matCellDef="let row"> 12/10/2024 </td>
 
           </ng-container>
-          <!-- Fruit Column -->
-          <ng-container matColumnDef="fruit">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Hora </th>
-            <td mat-cell *matCellDef="let row"> 10:00 </td>
-          </ng-container>
 
           <ng-container matColumnDef="tags">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Tags </th>
@@ -62,12 +59,12 @@
 
           <ng-container matColumnDef="entiti">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Entidad </th>
-            <td mat-cell *matCellDef="let row"> {{row.entiti}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.entity}} </td>
           </ng-container>
 
           <ng-container matColumnDef="estado">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
-            <td mat-cell *matCellDef="let row"> {{row.state}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.status}} </td>
           </ng-container>
 
           <ng-container matColumnDef="detalle">
@@ -99,7 +96,7 @@
       
           <!-- Row shown when there is no matching data. -->
           <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">No se encontro el formalizador "{{input.value}}"</td>
+            <td class="mat-cell" colspan="4">No hay data "{{input.value}}"</td>
           </tr>
         </table>
       
