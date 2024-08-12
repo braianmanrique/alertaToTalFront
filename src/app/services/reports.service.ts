@@ -11,4 +11,9 @@ export class ReportsService {
   loadReports(){
     return this.http.get("http://localhost:3000/sales");
   }
+
+  loadAlerts(){
+    return this.http.get("https://alerta-total-back.onrender.com/api/alerts/all");
+
+  }
 }

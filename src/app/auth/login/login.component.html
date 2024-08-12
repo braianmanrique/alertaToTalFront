@@ -1,23 +1,23 @@
 <section>
     <div class="contenedor">
         <div class="formulario">
-            <form [formGroup]="login" (ngSubmit)="loginData(login)" class="form_box">
+            <form [formGroup]="login" (ngSubmit)="loginData()" class="form_box" autocomplete="off">
                 <h2>ALERTA TOTAL</h2>
                 <div class="input-contenedor">
                   
-                    <input type="email" formControlName="user" required="">
+                    <input type="email" formControlName="email">
                     <label for="">Correo</label>
                 </div>
         
                 <div class="input-contenedor">
                   
-                    <input type="password" formControlName="password"   required="">
+                    <input type="password" formControlName="password"   >
                     <label for="">Contraseña</label>
                 </div>
 
                 <div class="olvidar">
                     <label for="">
-                        <input type="checkbox" > Recordar
+                        <input type="checkbox"  formControlName="remember">  Recordar
                         <a href="#">Olvidé la contraseña</a>
                     </label>
                 </div>

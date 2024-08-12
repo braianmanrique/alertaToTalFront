@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { ReportsService } from 'src/app/services/reports.service';
 
 export interface UserData {
   id: string;
@@ -57,11 +58,19 @@ export class DashboardComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator ;
   @ViewChild(MatSort) sort!: MatSort ;
   
-  constructor(private router : Router){
+  constructor(private router : Router, private alertsService: ReportsService){
     const users = Array.from({length: 10}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+  }
+
+  ngOnInit():void{
+   this.alertsService.loadAlerts().subscribe(resp=> {
+
+   },(err) =>{
+    console.log(err.error)
+   } )
   }
 
   ngAfterViewInit() {
@@ -88,6 +97,7 @@ export class DashboardComponent {
 
 
 function createNewUser(id: number): UserData {
+  
   const name =
     NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
     ' ' +

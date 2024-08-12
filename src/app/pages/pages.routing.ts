@@ -5,28 +5,24 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { DetailComponent } from './detail/detail.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
+import { authGuard } from '../guards/auth.guard';
 
 
 const routes: Routes = [
     {path: 'home', 
     component: MainpageComponent,
     // canActivate: [AuthGuard],
+    canActivate:[authGuard],
      children:[ 
      { path: '',redirectTo: 'dashboard', pathMatch: 'full'},
      { path: 'dashboard', component: DashboardComponent },
      { path: 'reports', component: ReportsComponent },
      { path: 'settings', component: SettingsComponent },
-
-
      {path: 'detalle/:id', component: DetailComponent}
     
     ]
   },
-    //{ path: 'path/:routeParam', component: MyComponent },
-    //{ path: 'staticPath', component: ... },
-    //{ path: '**', component: ... },
-    //{ path: 'oldPath', redirectTo: '/staticPath' },
-    //{ path: ..., component: ..., data: { message: 'Custom' }
+  
 ];
 
 @NgModule({
